@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     timer(0, 45000).subscribe(() => {
       this.mtaApiService.getClintonWashC().subscribe((arrivalDto) => {
-        console.log(arrivalDto);
         this.clintonWashCArrivals = arrivalDto;
       });
 
