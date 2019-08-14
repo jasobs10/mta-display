@@ -1,7 +1,7 @@
 <div class="container" *ngIf="clintonWashGArrivals && clintonWashCArrivals && classonGArrivals">
   <div class="stop-container">
     <header class="header">
-      Clinton-Washington C = Updated: {{clintonWashCArrivals.time}}
+      Clinton-Washington C - {{clintonWashCArrivals.lastUpdated}}
     </header>
     
     <div class="stop-body">
@@ -33,7 +33,7 @@
 
   <div class="stop-container">
     <header class="header">
-      Clinton-Washington G - Updated: {{clintonWashGArrivals.time}}
+      Clinton-Washington G - {{clintonWashGArrivals.lastUpdated}}
     </header>
     
     <div class="stop-body">
@@ -64,7 +64,7 @@
 
   <div class="stop-container">
     <header class="header">
-      Classon G - Updated: {{classonGArrivals.time}}
+      Classon G - {{classonGArrivals.lastUpdated}}
     </header>
     
     <div class="stop-body">

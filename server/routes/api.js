@@ -5,7 +5,8 @@ var path = require('path');
 const moment = require('moment');
 const axios = require('axios');
 
-const API = 'http://datamine.mta.info/mta_esi.php?key=11e436ba44a85d35ef64c4f601f2b19b';
+const apiKey = process.env['MTA_API_KEY'];
+const API = `http://datamine.mta.info/mta_esi.php?key=${apiKey}`;
 var proto = path.resolve(__dirname + '/../data/nyct-subway.proto');
 const transit = ProtoBuf.loadProtoFile(proto).build("transit_realtime");
 
@@ -56,11 +57,13 @@ function getTrainArrivals(uptownStopId, downtownStopId, trains) {
           }
     });
 
-    const time = moment().format('MMMM Do YYYY, h:mm:ss a');
+    const time = moment().format('h:mm:ss a').toString();
+    uptownTimes.sort((a, b) => a - b);
+    downtownTimes.sort((a, b) => a - b);
 
     return { 
-      uptownTimes: uptownTimes.sort(),
-      downtownTimes: downtownTimes.sort(),
+      uptownTimes,
+      downtownTimes,
       lastUpdated: time
     };
 }
