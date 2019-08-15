@@ -9,7 +9,7 @@
         <header>Manhattan</header>
 
         <div class="arrival-row" *ngFor="let time of clintonWashCArrivals.uptownTimes; let i = index;">
-          <ng-container *ngIf="i < 3">
+          <ng-container>
             <div class="ace">
               C
             </div>
@@ -20,7 +20,7 @@
       <div class="downtown">
         <header>Brooklyn</header>
         <div class="arrival-row" *ngFor="let time of clintonWashCArrivals.downtownTimes; let i = index;">
-          <ng-container *ngIf="i < 3">
+          <ng-container>
             <div class="ace">
               C
             </div>
@@ -40,7 +40,7 @@
       <div class="uptown">
         <header>Queens</header>
         <div class="arrival-row" *ngFor="let time of clintonWashGArrivals.uptownTimes; let i = index;">
-          <ng-container *ngIf="i < 3">
+          <ng-container>
             <div class="g">
               G
             </div>
@@ -51,7 +51,7 @@
       <div class="downtown">
         <header>Brooklyn</header>
         <div class="arrival-row" *ngFor="let time of clintonWashGArrivals.downtownTimes; let i = index;">
-          <ng-container *ngIf="i < 3">
+          <ng-container>
             <div class="g">
               G
             </div>
@@ -71,7 +71,7 @@
       <div class="uptown">
         <header>Queens</header>
         <div class="arrival-row" *ngFor="let time of classonGArrivals.uptownTimes; let i = index;">
-          <ng-container *ngIf="i < 3">
+          <ng-container>
             <div class="g">
               G
             </div>
@@ -82,7 +82,7 @@
       <div class="downtown">
         <header>Brooklyn</header>
         <div class="arrival-row" *ngFor="let time of classonGArrivals.downtownTimes; let i = index;">
-          <ng-container *ngIf="i < 3">
+          <ng-container>
             <div class="g">
               G
             </div>
