@@ -27,8 +27,8 @@ router.get('/feed/:id', (req, res) => {
 });
 
 function getTrainArrivals(uptownStopId, downtownStopId, trains) {
-  const uptownTimes = [];
-  const downtownTimes = [];
+  let uptownTimes = [];
+  let downtownTimes = [];
 
   Object.keys(trains)
     .forEach(trainId => {
@@ -58,8 +58,8 @@ function getTrainArrivals(uptownStopId, downtownStopId, trains) {
     });
 
     const time = moment().format('h:mm:ss a').toString();
-    uptownTimes.sort((a, b) => a - b);
-    downtownTimes.sort((a, b) => a - b);
+    uptownTimes = uptownTimes.sort((a, b) => a - b).slice(0, 3);
+    downtownTimes = downtownTimes.sort((a, b) => a - b).slice(0, 3);
 
     return { 
       uptownTimes,
